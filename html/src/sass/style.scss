@@ -1,5 +1,12 @@
 @import "./node_modules/reset-css/sass/reset";
 
+$color-text: #000000;
+$size-header: 18px;
+
+@mixin margin-wrapper {
+  margin: 0 auto;
+  padding: 0 50px;
+}
 
 body {
   color: black;
@@ -10,10 +17,10 @@ a {
 }
 
 .wrapper {
+  height: 100vh;
 
   &-header {
-    margin: 0 auto;
-    padding: 0 50px;
+    @include margin-wrapper;
     border-bottom: 1px solid black;
   }
 }
@@ -43,9 +50,12 @@ a {
     justify-content: space-around;
 
     &__item {
-      color: black;
-      font-size: 18px;
       font-weight: bold;
+    }
+
+    &__link {
+      color: $color-text;
+      font-size: $size-header;
     }
   }
 
