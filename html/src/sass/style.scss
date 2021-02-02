@@ -1,0 +1,52 @@
+@import "./node_modules/reset-css/sass/reset";
+
+
+body {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+
+  &-header {
+    margin: 0 auto;
+    padding: 0 50px;
+    border-bottom: 1px solid black;
+  }
+}
+
+.header {
+  padding: 20px 0;
+  height: 50px;
+
+  display: flex;
+
+  &-logo {
+    flex-basis: 55px;
+
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+  &-menu {
+    padding: 0 10px;
+
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-around;
+
+    &__item {
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+}
