@@ -96,8 +96,8 @@ module.exports.watch = function() {
   watch(conf.src + '/js/main.js', js);
   watch(conf.src + '/css/*.css', css);
   // watch(conf.src + '/less/**/style.less', lessToCss);
-  watch(conf.src + '/sass/style.scss', sassToCss);
-  watch(conf.src + '/img/*.img', img);
+  watch(conf.src + '/sass/*.scss', sassToCss);
+  watch(conf.src + '/img/*', img);
   watch(conf.src + '/*.html', html);
   watch(conf.src + '/*.html', browserSync.reload);
 }
