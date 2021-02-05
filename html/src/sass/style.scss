@@ -1,7 +1,10 @@
 @import "./node_modules/reset-css/sass/reset";
 
 $color-text: #000000;
+$color-hover: #CFD8DC;
+$color-background: #ECEFF1;
 $size-header: 18px;
+
 
 @import "header.scss";
 @import "member.scss";

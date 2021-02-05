@@ -1,7 +1,8 @@
+@import 'burger.scss';
+
 .header {
   padding: 20px 0;
   height: 50px;
-
   display: flex;
 
   &-logo {
@@ -11,12 +12,10 @@
       max-height: 100%;
       max-width: 100%;
     }
-
   }
 
   &-menu {
     padding: 0 10px;
-
     display: flex;
     flex-grow: 1;
     align-items: center;
@@ -24,12 +23,32 @@
 
     &__item {
       font-weight: bold;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-color: $color-hover;
+      }
     }
 
     &__link {
       color: $color-text;
       font-size: $size-header;
     }
+
+    @media (max-width: 600px) {
+      display: none;
+      &__hamburger-menu {
+        display: block;
+      }
+    }
   }
 
+  &__hamburger-menu {
+    display: none;
+
+    @media (max-width: 600px) {
+      display: block;
+    }
+  }
 }
