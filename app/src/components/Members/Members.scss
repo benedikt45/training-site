@@ -1,0 +1,52 @@
+
+$color-text: #000000;
+$size-header: 18px;
+$size-h2: 16px;
+
+.members {
+  padding: 40px 0;
+
+  & > h2 {
+    font-size: $size-h2;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-card {
+    box-sizing: border-box;
+    border: 1px solid $color-text;
+    display: flex;
+    flex-basis: 300px;
+    color: $color-text;
+    margin: 0 20px;
+
+    padding: 20px 10px;
+
+    &__avatar {
+      max-width: 50px;
+      flex-basis: 50px;
+      margin-right: 10px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__body {
+      margin-top: auto;
+    }
+  }
+}

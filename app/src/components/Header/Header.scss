@@ -1,0 +1,38 @@
+$color-text: #000000;
+$size-header: 18px;
+
+.header {
+  padding: 20px 0;
+  height: 50px;
+
+  display: flex;
+
+&-logo {
+   flex-basis: 55px;
+
+& img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+}
+
+&-menu {
+   padding: 0 10px;
+
+   display: flex;
+   flex-grow: 1;
+   align-items: center;
+   justify-content: space-around;
+
+&__item {
+   font-weight: bold;
+ }
+
+&__link {
+   color: $color-text;
+   font-size: $size-header;
+ }
+}
+
+}
