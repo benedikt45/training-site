@@ -9,12 +9,14 @@ class Members extends React.Component {
 
   render() {
     return (
-      <div className="members">
-        <h2>Группа №1</h2>
-        <div className="members-wrapper">
-          <MemberCard />
+      <section className="members-section">
+        <div className="members">
+          <h2>Группа №1</h2>
+          <div className="members-wrapper">
+            <MemberCard />
+          </div>
         </div>
-      </div>
+      </section>
     )
   }
 }
