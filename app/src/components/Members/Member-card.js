@@ -5,6 +5,7 @@ import avatar from './avatar.png'
 class MemberCard extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {name: props.name, age: props.age}
   }
 
   render() {
@@ -14,12 +15,11 @@ class MemberCard extends React.Component {
             <img src={avatar} alt="Avatar"/>
           </div>
           <div className="members-card__right">
-            <div className="members-card__header">Альберт Иванович Иванов</div>
+            <div className="members-card__header">{this.state.name}</div>
             <div className="members-card__body">
-              <span>Возраст: 24</span>
+              <span>Возраст: {this.state.age}</span>
             </div>
           </div>
-          {/*<div className="members-card__footer"></div>*/}
         </a>
     )
   }

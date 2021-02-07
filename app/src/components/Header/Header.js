@@ -1,33 +1,56 @@
 import React from 'react'
 import './Header.scss'
 import logo from './logo-training.png'
+import HeaderItem from './HeaderItem'
 
 class Header extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      buttons: [
+        {
+          name: "Главная страница",
+          id: this.randomID()
+        },
+        {
+          name: "Расписание",
+          id: this.randomID()
+        },
+        {
+          name: "Участники",
+          id: this.randomID()
+        },
+        {
+          name: "Результаты",
+          id: this.randomID()
+        }
+      ]
+    }
+  }
+
+  randomID() {
+    let max = 100000000
+    let min = 1
+    return Math.random() * (max - min) + min;
   }
 
   render() {
     return (
-        <div className="header">
-          <a href="#" className="header-logo"><img src={logo} alt="Logo"/></a>
-          <ul className="header-menu">
-            <li className="header-menu__item">
-              <a href="#" className="header-menu__link">Главная страница</a>
-            </li>
-            <li className="header-menu__item">
-              <a href="#" className="header-menu__link">Расписание</a>
-            </li>
-            <li className="header-menu__item">
-              <a href="#" className="header-menu__link">Участники</a>
-            </li>
-            <li className="header-menu__item">
-              <a href="#" className="header-menu__link">Результаты</a>
-            </li>
-          </ul>
-        </div>
+      <div className="header">
+        <a href="#" className="header-logo"><img src={logo} alt="Logo"/></a>
+        <ul className="header-menu">
+          {
+            this.state.buttons.map((elem) => {
+              return (
+                <HeaderItem key={elem.id} name={elem.name}/>
+              )
+            })
+          }
+        </ul>
+      </div>
     )
   }
 }
+
 
 export default Header;
