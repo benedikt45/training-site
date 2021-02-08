@@ -1,0 +1,16 @@
+$size-h1: 28px;
+
+.main-page {
+  margin: 0 auto;
+  padding-top: 30px;
+
+  & h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  & span {
+    font-style: italic;
+  }
+}

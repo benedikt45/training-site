@@ -7,13 +7,16 @@ import {
 import "./App.scss"
 import Header from "./Header/Header.js"
 import Members from "./Members/Members"
-import Schedule from "./Schedule/Schedule";
+import Schedule from "./Schedule/Schedule"
+import Main from "./Main/Main";
 
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      username: 'Roman',
+      isLogin: false,
       groups: [{
         name: "Группа №1",
         id: this.randomID(),
@@ -81,6 +84,10 @@ class App extends React.Component {
 
                 <Route path="/schedule">
                   <Schedule images={this.state.schedule}/>
+                </Route>
+
+                <Route path="/">
+                  <Main isLogin={this.state.isLogin} username={this.state.username}/>
                 </Route>
               </Switch>
             </div>

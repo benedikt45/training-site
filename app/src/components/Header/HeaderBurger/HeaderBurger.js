@@ -16,11 +16,13 @@ class HeaderBurger extends React.Component {
             <span></span>
           </label>
           <ul className="menu-hamburger__box">
-            {this.props.buttons.map((elem) => {
-              return (
-                  <HeaderItem key={elem.id} name={elem.name} prefix={'menu-hamburger'} />
-              )
-            })}
+            {
+              this.props.buttons.map((elem) => {
+                return (
+                    <HeaderItem key={elem.id} name={elem.name} prefix={'menu-hamburger'} link={elem.link} />
+                )
+              })
+            }
           </ul>
         </div>
     )

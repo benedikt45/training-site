@@ -8,6 +8,7 @@ class HeaderItem extends React.Component {
   }
 
   render() {
+    // console.log(this.props)
     return (
       <li className={this.props.prefix + "__item"}>
         <Link to={this.props.link} className={this.props.prefix + "__link"}>{this.props.name}</Link>
