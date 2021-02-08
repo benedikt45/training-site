@@ -14,9 +14,6 @@ const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/))
 class Schedule extends React.Component {
   constructor(props) {
     super(props)
-    // this.state = {
-    //   images: props.images
-    // }
   }
 
   render() {
