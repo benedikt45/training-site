@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.scss'
 import logo from './logo-training.png'
 import HeaderItem from './HeaderItem'
+import HeaderBurger from './HeaderBurger'
 
 class Header extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Header extends React.Component {
   }
 
   render() {
+
     return (
       <div className="header">
         <a href="#" className="header-logo"><img src={logo} alt="Logo"/></a>
@@ -42,11 +44,12 @@ class Header extends React.Component {
           {
             this.state.buttons.map((elem) => {
               return (
-                <HeaderItem key={elem.id} name={elem.name}/>
+                <HeaderItem key={elem.id} name={elem.name} prefix={'header-menu'} buttons={this.state.buttons} />
               )
             })
           }
         </ul>
+        <HeaderBurger buttons={this.state.buttons} />
       </div>
     )
   }

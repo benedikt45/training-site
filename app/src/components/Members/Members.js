@@ -12,7 +12,7 @@ class Members extends React.Component {
     return (
       <section className="members-section">
         <div className="members">
-          <h2>{this.state.name}</h2>
+          <h3>{this.state.name}</h3>
           <div className="members-wrapper">
             {
               this.state.members.map((member) => {

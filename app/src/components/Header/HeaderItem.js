@@ -3,13 +3,13 @@ import React from 'react'
 class HeaderItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {name: props.name}
+    this.state = {name: props.name, prefix: props.prefix }
   }
 
   render() {
     return (
-      <li className="header-menu__item">
-        <a href="#" className="header-menu__link">{this.state.name}</a>
+      <li className={this.state.prefix + "__item"}>
+        <a href="#" className={this.state.prefix + "__link"}>{this.state.name}</a>
       </li>
     )
   }
