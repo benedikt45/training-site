@@ -7,11 +7,20 @@ class HeaderItem extends React.Component {
     // this.state = {name: props.name, prefix: props.prefix }
   }
 
+  onClickHandler = () => {
+    if (this.props.burger) {
+      this.props.onClickHandler()
+    }
+  }
+
   render() {
-    // console.log(this.props)
     return (
       <li className={this.props.prefix + "__item"}>
-        <Link to={this.props.link} className={this.props.prefix + "__link"}>{this.props.name}</Link>
+        <Link
+          to={this.props.link}
+          className={this.props.prefix + "__link"}
+          onClick={this.onClickHandler}
+        >{this.props.name}</Link>
       </li>
     )
   }

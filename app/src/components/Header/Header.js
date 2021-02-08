@@ -49,7 +49,7 @@ class Header extends React.Component {
             {
               this.state.buttons.map((elem) => {
                 return (
-                    <HeaderItem key={elem.id} name={elem.name} prefix={'header-menu'} link={elem.link}/>
+                    <HeaderItem burger={false} key={elem.id} name={elem.name} prefix={'header-menu'} link={elem.link}/>
                 )
               })
             }
