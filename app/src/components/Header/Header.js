@@ -3,7 +3,7 @@ import './Header.scss'
 import logo from './logo-training.png'
 import HeaderItem from './HeaderItem/HeaderItem'
 import HeaderBurger from './HeaderBurger/HeaderBurger'
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 
 class Header extends React.Component {
   constructor(props) {
@@ -43,19 +43,19 @@ class Header extends React.Component {
   render() {
 
     return (
-      <div className="header">
-        <Link to="/" className="header-logo"><img src={logo} alt="Logo"/></Link>
-        <ul className="header-menu">
-          {
-            this.state.buttons.map((elem) => {
-              return (
-                <HeaderItem key={elem.id} name={elem.name} prefix={'header-menu'} link={elem.link} />
-              )
-            })
-          }
-        </ul>
-        <HeaderBurger buttons={this.state.buttons} />
-      </div>
+        <div className="header">
+          <Link to="/" className="header-logo"><img src={logo} alt="Logo"/></Link>
+          <ul className="header-menu">
+            {
+              this.state.buttons.map((elem) => {
+                return (
+                    <HeaderItem key={elem.id} name={elem.name} prefix={'header-menu'} link={elem.link}/>
+                )
+              })
+            }
+          </ul>
+          <HeaderBurger buttons={this.state.buttons}/>
+        </div>
     )
   }
 }
