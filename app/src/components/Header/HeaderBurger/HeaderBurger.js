@@ -1,6 +1,6 @@
 import React from 'react'
 import './HeaderBurger.scss';
-import HeaderItem from './HeaderItem'
+import HeaderItem from '../HeaderItem/HeaderItem'
 
 class HeaderBurger extends React.Component {
   constructor(props) {

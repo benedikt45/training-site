@@ -1,8 +1,8 @@
 import React from 'react'
 import './Header.scss'
 import logo from './logo-training.png'
-import HeaderItem from './HeaderItem'
-import HeaderBurger from './HeaderBurger'
+import HeaderItem from './HeaderItem/HeaderItem'
+import HeaderBurger from './HeaderBurger/HeaderBurger'
 
 class Header extends React.Component {
   constructor(props) {

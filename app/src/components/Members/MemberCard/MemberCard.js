@@ -1,6 +1,6 @@
 import React from 'react'
-import './Member-card.scss'
-import avatar from './avatar.png'
+import './MemberCard.scss'
+import avatar from '../avatar.png'
 
 class MemberCard extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Members.scss'
-import MemberCard from "./Member-card";
+import MemberCard from "./MemberCard/MemberCard";
 
 class Members extends React.Component {
   constructor(props) {
