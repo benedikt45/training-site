@@ -13,7 +13,7 @@ class Header extends React.Component {
         {
           name: "Главная страница",
           id: this.randomID(),
-          link: "/main"
+          link: "/"
         },
         {
           name: "Расписание",
