@@ -1,28 +1,37 @@
 import React from 'react'
 import './Schedule.scss'
 
+function importAll(r) {
+  let images = {}
+  r.keys().forEach((item) => {
+    images[item.replace('./', '')] = r(item)
+  })
+  return images
+}
+
+const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/))
+
 class Schedule extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      images: props.images
-    }
+    // this.state = {
+    //   images: props.images
+    // }
   }
 
   render() {
-    const list = this.state.images.map((img) => {
+    const list = this.props.images.map((img) => {
       return (
-        <div className="img-wrapper">
-          <h2>{img.name}</h2>
-          <img src={img.path} alt={img.alt}/>
-        </div>
+          <div className="img-wrapper">
+            <h2>{img.name}</h2>
+            <img src={images[img.path].default} alt={img.alt}/>
+          </div>
       )
     })
-
     return (
-      <section className="schedule">
-        {list}
-      </section>
+        <section className="schedule">
+          {list}
+        </section>
     )
   }
 }

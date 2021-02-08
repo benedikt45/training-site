@@ -3,6 +3,7 @@ import './Header.scss'
 import logo from './logo-training.png'
 import HeaderItem from './HeaderItem/HeaderItem'
 import HeaderBurger from './HeaderBurger/HeaderBurger'
+import { Link } from "react-router-dom"
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,19 +12,23 @@ class Header extends React.Component {
       buttons: [
         {
           name: "Главная страница",
-          id: this.randomID()
+          id: this.randomID(),
+          link: "/"
         },
         {
           name: "Расписание",
-          id: this.randomID()
+          id: this.randomID(),
+          link: "/schedule"
         },
         {
           name: "Участники",
-          id: this.randomID()
+          id: this.randomID(),
+          link: "/members"
         },
         {
           name: "Результаты",
-          id: this.randomID()
+          id: this.randomID(),
+          link: "results"
         }
       ]
     }
@@ -39,12 +44,12 @@ class Header extends React.Component {
 
     return (
       <div className="header">
-        <a href="#" className="header-logo"><img src={logo} alt="Logo"/></a>
+        <Link to="/" className="header-logo"><img src={logo} alt="Logo"/></Link>
         <ul className="header-menu">
           {
             this.state.buttons.map((elem) => {
               return (
-                <HeaderItem key={elem.id} name={elem.name} prefix={'header-menu'} buttons={this.state.buttons} />
+                <HeaderItem key={elem.id} name={elem.name} prefix={'header-menu'} link={elem.link} />
               )
             })
           }

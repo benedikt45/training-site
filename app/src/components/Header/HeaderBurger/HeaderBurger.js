@@ -5,7 +5,7 @@ import HeaderItem from '../HeaderItem/HeaderItem'
 class HeaderBurger extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {buttons: props.buttons}
+    // this.state = {buttons: props.buttons}
   }
 
   render() {
@@ -16,9 +16,9 @@ class HeaderBurger extends React.Component {
             <span></span>
           </label>
           <ul className="menu-hamburger__box">
-            {this.state.buttons.map((elem) => {
+            {this.props.buttons.map((elem) => {
               return (
-                  <HeaderItem key={elem.id} name={elem.name} prefix={'menu-hamburger'} buttons={this.state.buttons}/>
+                  <HeaderItem key={elem.id} name={elem.name} prefix={'menu-hamburger'} />
               )
             })}
           </ul>

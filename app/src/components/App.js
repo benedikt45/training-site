@@ -1,6 +1,11 @@
 import React from 'react'
-import './App.scss';
-import Header from './Header/Header.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
+import "./App.scss"
+import Header from "./Header/Header.js"
 import Members from "./Members/Members"
 import Schedule from "./Schedule/Schedule";
 
@@ -61,21 +66,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="wrapper-header">
-          <Header/>
-        </div>
-        <div className="wrapper-main">
-          {
-            this.state.groups.map((group) => {
-              return <Members key={group.id} name={group.name} members={group.members}/>
-            })
-          }
-          {
-            <Schedule images={this.state.schedule} />
-          }
-        </div>
-      </div>
+        <Router>
+          <div className="wrapper">
+            <div className="wrapper-header">
+              <Header/>
+            </div>
+            <div className="wrapper-main">
+              <Switch>
+                <Route path="/members">
+                  {this.state.groups.map((group) => {
+                    return <Members key={group.id} name={group.name} members={group.members}/>
+                  })}
+                </Route>
+
+                <Route path="/schedule">
+                  <Schedule images={this.state.schedule}/>
+                </Route>
+              </Switch>
+            </div>
+          </div>
+        </Router>
     )
   }
 }
